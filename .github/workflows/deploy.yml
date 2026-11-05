@@ -34,10 +34,10 @@ jobs:
           echo "REPO_LC=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
 
       - name: Build and Push Image
-        uses: docker/build-push-action@v6
+        uses: Docker/build-push-action@v6
         with:
           context: .
-          file: docker/Dockerfile
+          file: Docker/Dockerfile
           push: true
           tags: |
             ghcr.io/${{ env.REPO_LC }}:latest
